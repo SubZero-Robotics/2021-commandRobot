@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# gradle 
+.gradle/
+
+# the build directory
+build/
