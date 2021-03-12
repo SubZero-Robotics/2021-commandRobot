@@ -7,7 +7,7 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 
 #include "subsystems/DriveSubsystem.h"
-
+#include <frc/Encoder.h>
 
 DriveSubsystem::DriveSubsystem() {
   // Implementation of subsystem constructor goes here.
@@ -37,6 +37,12 @@ void DriveSubsystem::Periodic() {
   // for example, publish encoder settings or motor currents to dashboard
   Distance = Ultrasonic.GetVoltage()*1000.0*(1.0/0.977)*(1.0/25.4);
   frc::SmartDashboard::PutNumber("Distance", Distance);
+
+  //Display encoder values in SmartDashboard
+  rEncoder = RightLead.GetSelectedSensorPosition();
+  frc::SmartDashboard::PutNumber("Right Encoder", rEncoder);
+  lEncoder = LeftLead.GetSelectedSensorPosition();
+  frc::SmartDashboard::PutNumber("Left Encoder", lEncoder);
 
   gyroAngle = ahrs.GetYaw();
   frc::SmartDashboard::PutNumber("gyroAngle", gyroAngle);

@@ -134,6 +134,10 @@ class DriveSubsystem : public frc2::SubsystemBase {
   // encoders here, if we get them
   //frc::Encoder m_leftEncoder;
   //frc::Encoder m_rightEncoder;
+  
+  // The default (starting) values for the encoder
+  double lEncoder = 0.0;
+  double rEncoder = 0.0;
 
   // Ultrasonic Ranger
   frc::AnalogInput Ultrasonic{0};
