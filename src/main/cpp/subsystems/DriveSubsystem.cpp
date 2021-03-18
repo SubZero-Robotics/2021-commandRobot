@@ -39,7 +39,7 @@ void DriveSubsystem::Periodic() {
   frc::SmartDashboard::PutNumber("Distance", Distance);
 
   //Display encoder values in SmartDashboard
-  rEncoder = RightLead.GetSelectedSensorPosition();
+  rEncoder = -RightLead.GetSelectedSensorPosition();
   frc::SmartDashboard::PutNumber("Right Encoder", rEncoder);
   lEncoder = LeftLead.GetSelectedSensorPosition();
   frc::SmartDashboard::PutNumber("Left Encoder", lEncoder);
@@ -62,8 +62,8 @@ void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
 }
 
 //void DriveSubsystem::ResetEncoders() {
-//  m_leftEncoder.Reset();
-//  m_rightEncoder.Reset();
+//  lEncoder.Reset();
+//  rEncoder.Reset();
 //}
 
 //double DriveSubsystem::GetAverageEncoderDistance() {
