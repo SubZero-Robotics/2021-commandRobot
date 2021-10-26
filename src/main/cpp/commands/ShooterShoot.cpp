@@ -14,7 +14,7 @@ ShooterShoot::ShooterShoot(ShooterSubsystem* subsystem, frc::XboxController* con
 }
 
 void ShooterShoot::Initialize() { }
-
+ 
 void ShooterShoot::Execute() {
   // tell shooter to get to set rpm
   m_shooter->Shoot();

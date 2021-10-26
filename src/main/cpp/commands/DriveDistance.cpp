@@ -7,7 +7,7 @@
 
 #include "commands/DriveDistance.h"
 
-#include <cmath>
+#include <cmath> 
 
 DriveDistance::DriveDistance(double inches, double speed,
                              DriveSubsystem* subsystem)
@@ -22,7 +22,7 @@ void DriveDistance::Initialize() {
 
 void DriveDistance::End(bool interrupted) { m_drive->ArcadeDrive(0, 0); }
 
-bool DriveDistance::IsFinished() {
+bool DriveDistance::IsFinished() {  
 //  return std::abs(m_drive->GetAverageEncoderDistance()) >= m_distance;
-  return true;
+  return false;
 }

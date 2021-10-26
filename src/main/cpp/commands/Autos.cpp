@@ -30,7 +30,7 @@ LeftAuto::LeftAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerSub
   );
 }
 
-RightAuto::RightAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerSubsystem* indexer) {
+NoAuto::NoAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerSubsystem* indexer) {
   AddCommands(
       // Drive back the specified time.  Positive power really is backwards
       DriveStraight(0.6, drive).WithTimeout(1_s),
@@ -45,3 +45,12 @@ RightAuto::RightAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerS
       TurnToAngle(90_deg, drive).WithTimeout(2_s)
   );
 }
+
+/*NoAuto::NoAuto(DriveSubsystem* drive, ShooterSubsystem* shooter, IndexerSubsystem* indexer) {
+  AddCommands(
+
+      //DriveStraight().WithTimeout()
+
+  );
+
+}*/

@@ -28,7 +28,7 @@ class ShooterSubsystem : public frc2::SubsystemBase {
   /**
    * Move balls towards the target, fast
    */
-  void Shoot();
+  void Shoot(); 
 
   /**
    * Move balls away from the shooter, towards the intake, to clear jams
