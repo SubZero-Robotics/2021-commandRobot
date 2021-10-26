@@ -6,7 +6,7 @@
 
 #include "subsystems/ClimberSubsystem.h"
 
-/*class ClimberDown : public frc2::CommandHelper<frc2::CommandBase, ClimberDown> {
+class ClimberDown /*: public frc2::CommandHelper<frc2::CommandBase, ClimberDown> */{
     public: 
      
      void Initialize() override;
@@ -19,4 +19,7 @@
 
     private: 
 
-}*/
+     ClimberSubsystem* m_climberdown;
+     frc::XboxController* m_controller;
+
+}

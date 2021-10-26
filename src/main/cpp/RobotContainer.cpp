@@ -38,7 +38,7 @@ RobotContainer::RobotContainer() {
   frc::Shuffleboard::GetTab("Autonomous").Add(m_chooser);
 
   // Configure the button bindings
-  ConfigureButtonBindings();
+  ConfigureButtonBindings(); 
 
 // Set up default drive command.  Does this whenever the DriveSubSystem isn't doing anything else
   m_drive.SetDefaultCommand(DefaultDrive(
