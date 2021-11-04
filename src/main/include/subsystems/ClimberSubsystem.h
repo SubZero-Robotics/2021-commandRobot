@@ -17,6 +17,8 @@ class ClimberSubsystem : public frc2::SubsystemBase {
 
   void RunWinch();
 
+  void ClimberStop();
+
  private:
 
   WPI_VictorSPX Climber{7};   //Climber lift

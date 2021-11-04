@@ -47,13 +47,3 @@ class RightAuto
   RightAuto(DriveSubsystem* drive, ShooterSubsystem* shooter, IndexerSubsystem* indexer);
 };
 
-class NoAuto 
-     : public frc2::CommandHelper<frc2::SequentialCommandGroup, NoAuto> {
- public:
-  /**
-    //@param drive
-
-  */
-  NoAuto(DriveSubsystem* drive, ShooterSubsystem* shooter, IndexerSubsystem* indexer);
-
-};

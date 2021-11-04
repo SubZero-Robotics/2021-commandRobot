@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <frc2/command/Command.h>
+#include <frc2/command/Command.h> 
 #include <frc/smartdashboard/SendableChooser.h>
 
 #include <frc/XboxController.h>
@@ -19,6 +19,7 @@
 #include "subsystems/IntakeSubsystem.h"
 #include "subsystems/IndexerSubsystem.h"
 #include "subsystems/ShooterSubsystem.h"
+#include "subsystems/ClimberSubsystem.h"
 
 
 /**
@@ -42,6 +43,7 @@ class RobotContainer {
   IntakeSubsystem m_intake;
   IndexerSubsystem m_indexer;
   ShooterSubsystem m_shooter;
+  ClimberSubsystem m_climber;
   
   // The auto routines
   LeftAuto m_leftAuto{&m_drive, &m_shooter, &m_indexer};  // add in whichever subsystems you use in this call list
