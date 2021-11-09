@@ -25,13 +25,13 @@ class ClimberSubsystem : public frc2::SubsystemBase {
    */
   void Periodic() override;
 
-  void ClimberUp();
+  void UpUp();
 
-  void ClimberDown();
+  void DownDown();
 
-  void RunWinch();
+  void Climb();
 
-  void ClimberStop();
+  void Stop();
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be

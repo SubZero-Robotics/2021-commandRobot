@@ -8,7 +8,7 @@ void ClimberUpUp::Initialize() {
 }
 
 void ClimberUpUp::Execute() {
-  m_climber->ClimberUp();
+  m_climber->UpUp();
 }
 
 void ClimberUpUp::End(bool interrupted) {

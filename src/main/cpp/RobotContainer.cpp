@@ -27,7 +27,7 @@
 
 #include "commands/ClimberUpUp.h"
 #include "commands/ClimberDownDown.h"
-#include "commands/RunWinchWinch.h"
+#include "commands/ClimberClimb.h"
 #include "commands/ClimberStop.h"
 
 #include "Constants.h"
@@ -60,6 +60,7 @@ RobotContainer::RobotContainer() {
 // Set default shooter command.  Does this when not doing something else
   m_shooter.SetDefaultCommand(ShooterStop(&m_shooter));
 
+// Set default climber command.  Does this when not doing something else
   //m_climber.SetDefaultCommand(ClimberStop(&m_climber));
 }
 
@@ -112,8 +113,8 @@ void RobotContainer::ConfigureButtonBindings() {
   frc2::JoystickButton(&Xbox, Button::kBumperRight)
       .WhenHeld(TurnToLimelight(&m_drive).WithTimeout(2_s));
   
-  /*frc2::JoystickButton(&Xbox, Button::kY)
-      .WhenHeld(RunWinchWinch(&m_climber, &Xbox));*/
+  //frc2::JoystickButton(&Xbox, Button::kY)
+      //.WhenHeld(ClimberClimb(&m_climber, &Xbox));
 
   // unjam things
   // Run indexer and shooter backwards.  ParallelCommandGroup finishes when all of the commands finish

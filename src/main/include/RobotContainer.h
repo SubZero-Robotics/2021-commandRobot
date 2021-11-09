@@ -43,7 +43,7 @@ class RobotContainer {
   IntakeSubsystem m_intake;
   IndexerSubsystem m_indexer;
   ShooterSubsystem m_shooter;
-  ClimberSubsystem m_climber;
+  //ClimberSubsystem m_climber;
   
   // The auto routines
   LeftAuto m_leftAuto{&m_drive, &m_shooter, &m_indexer};  // add in whichever subsystems you use in this call list

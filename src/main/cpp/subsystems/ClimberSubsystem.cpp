@@ -8,18 +8,18 @@ void ClimberSubsystem::Periodic() {
 
 }
 
-void ClimberSubsystem::ClimberUp(){
+void ClimberSubsystem::UpUp(){
   Winch.Set(ControlMode::PercentOutput, 0.35);//.35, .65
 }
 
-void ClimberSubsystem::ClimberDown(){
+void ClimberSubsystem::DownDown(){
   Winch.Set(ControlMode::PercentOutput, -0.35);//-.35, .65
 }
 
-void ClimberSubsystem::RunWinch(){
+void ClimberSubsystem::Climb(){
   Climber.Set(ControlMode::PercentOutput, -0.8);//.5, .8
 }
 
-void ClimberSubsystem::ClimberStop(){
+void ClimberSubsystem::Stop(){
   Climber.Set(ControlMode::PercentOutput, 0);
 }

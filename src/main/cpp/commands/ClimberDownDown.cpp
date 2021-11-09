@@ -8,11 +8,11 @@ void ClimberDownDown::Initialize() {
 }
 
 void ClimberDownDown::Execute() {
-  m_climber->ClimberDown();
+  m_climber->DownDown();
 }
 
 void ClimberDownDown::End(bool interrupted) {
- // m_climber->Stop();
+  m_climber->Stop();
 }
 
 bool ClimberDownDown::IsFinished() {
