@@ -4,6 +4,10 @@
 
 #include "Constants.h" 
 
+ClimberSubsystem::ClimberSubsystem() {
+
+}
+
 void ClimberSubsystem::Periodic() {
 
 }
