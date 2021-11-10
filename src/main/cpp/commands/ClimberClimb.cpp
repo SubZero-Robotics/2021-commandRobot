@@ -1,7 +1,9 @@
 #include "commands/ClimberClimb.h"
-#include <frc/smartdashboard/Smartdashboard.h>
 
-#include "subsystems/ClimberSubsystem.h"
+ClimberClimb::ClimberClimb(ClimberSubsystem* subsystem, frc::XboxController* controller) 
+    : m_climber(subsystem), m_controller(controller)  {
+  AddRequirements({subsystem});
+}
 
 void ClimberClimb::Initialize() {
 

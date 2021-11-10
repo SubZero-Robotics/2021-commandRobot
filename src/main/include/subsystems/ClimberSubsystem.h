@@ -18,7 +18,7 @@ class ClimberSubsystem : public frc2::SubsystemBase {
  public: 
   ClimberSubsystem();
 
-// Subsystem methods go here.
+  // Subsystem methods go here.
 
   /**
    * Will be called periodically whenever the CommandScheduler runs.
