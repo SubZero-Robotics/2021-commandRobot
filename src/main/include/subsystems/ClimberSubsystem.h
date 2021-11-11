@@ -24,13 +24,25 @@ class ClimberSubsystem : public frc2::SubsystemBase {
    * Will be called periodically whenever the CommandScheduler runs.
    */
   void Periodic() override;
-
+ 
+  /**
+    * Raise telescoping climber hook
+    */
   void UpUp();
 
+  /**
+    * Lower telescoping climber hook
+    */
   void DownDown();
 
+  /**
+    * Run the winch to hoist the robot up towards the bar
+    */
   void Climb();
 
+  /**
+    * Stops the climber
+    */
   void Stop();
 
  private:

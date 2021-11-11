@@ -61,7 +61,7 @@ RobotContainer::RobotContainer() {
   m_shooter.SetDefaultCommand(ShooterStop(&m_shooter));
 
 // Set default climber command.  Does this when not doing something else
-  //m_climber.SetDefaultCommand(ClimberStop(&m_climber));
+  m_climber.SetDefaultCommand(ClimberStop(&m_climber));
 }
 
 // will need SelectCommand at some point:
@@ -99,22 +99,23 @@ void RobotContainer::ConfigureButtonBindings() {
       .WhenHeld(IndexerForward(&m_indexer));
 
   // Climber deployment and winch: Y button plus right stick
-  /*if (Xbox.GetY(frc::XboxController::JoystickHand(frc::XboxController::kRightHand))>.2){
+  //frc2::JoystickButton(&Xbox, Axis::kRightY)
+      //.WhenHeld(ClimberUpUp(&m_climber, &Xbox));
+ 
+  if (Xbox.GetY(frc::XboxController::JoystickHand(frc::XboxController::kRightHand))>.2){
     ClimberUpUp(&m_climber, &Xbox);
   } else if (Xbox.GetY(frc::XboxController::JoystickHand(frc::XboxController::kRightHand))>-.2) { //////////////////
     ClimberDownDown(&m_climber, &Xbox);
-  } else {
-    ClimberStop(&m_climber, &Xbox);
   }
-  */
+  
   // this logic will need Camden's explanation to implement
 
   // limelight aiming.  
   frc2::JoystickButton(&Xbox, Button::kBumperRight)
       .WhenHeld(TurnToLimelight(&m_drive).WithTimeout(2_s));
   
-  //frc2::JoystickButton(&Xbox, Button::kY)
-      //.WhenHeld(ClimberClimb(&m_climber, &Xbox));
+  frc2::JoystickButton(&Xbox, Button::kY)
+      .WhenHeld(ClimberClimb(&m_climber, &Xbox));
 
   // unjam things
   // Run indexer and shooter backwards.  ParallelCommandGroup finishes when all of the commands finish

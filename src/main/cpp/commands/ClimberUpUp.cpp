@@ -14,7 +14,7 @@ void ClimberUpUp::Execute() {
 }
 
 void ClimberUpUp::End(bool interrupted) {
- // m_climber->Stop();
+ m_climber->Stop(); //should do this anyways with m_climber.SetDefaultCommand
 }
 
 bool ClimberUpUp::IsFinished() {
