@@ -6,6 +6,8 @@
 
 ClimberSubsystem::ClimberSubsystem() {
   // Implementation of subsystem constructor goes here.
+  Winch.Set(ControlMode::PercentOutput, 0.0);
+  Climber.Set(ControlMode::PercentOutput, 0.0);
 }
 
 // Methods
