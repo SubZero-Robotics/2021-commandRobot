@@ -105,7 +105,7 @@ void RobotContainer::ConfigureButtonBindings() {
   frc2::JoystickButton(&Xbox, Button::kBumperLeft)
       .WhenHeld(ClimberUpUp(&m_climber, &Xbox));
 
-  frc2::JoystickButton(&Xbox, Button::kStickLeft)
+  frc2::JoystickButton(&Xbox, Button::kStickRight)
       .WhenHeld(ClimberDownDown(&m_climber, &Xbox));
 
   frc2::JoystickButton(&Xbox, Button::kY)

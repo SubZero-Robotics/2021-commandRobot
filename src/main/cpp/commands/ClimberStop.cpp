@@ -11,11 +11,7 @@ ClimberStop::ClimberStop(ClimberSubsystem* subsystem) : m_climber(subsystem) {
   AddRequirements({subsystem});
 }
 
-void ClimberStop::Initialize() { 
-  m_climber->Stop(); 
-  }
+void ClimberStop::Initialize() { m_climber->Stop(); }
 
 // this is a state, it lasts till it's cancelled
-bool ClimberStop::IsFinished() { 
-  return false; 
-  }
+bool ClimberStop::IsFinished() { return false; }

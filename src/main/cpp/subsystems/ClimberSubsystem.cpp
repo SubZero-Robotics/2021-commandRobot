@@ -31,5 +31,6 @@ void ClimberSubsystem::Climb(){
 }
 
 void ClimberSubsystem::Stop(){
-  Climber.Set(ControlMode::PercentOutput, 0);
+  Climber.Set(ControlMode::PercentOutput, 0.0);
+  Winch.Set(ControlMode::PercentOutput, 0.0);
 }
