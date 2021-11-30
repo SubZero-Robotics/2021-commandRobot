@@ -102,20 +102,20 @@ void RobotContainer::ConfigureButtonBindings() {
   //frc2::JoystickButton(&Xbox, Axis::kRightY) 
       //.WhenHeld(ClimberUpUp(&m_climber, &Xbox));
 
+  /*if (Xbox.GetY(frc::GenericHID::kRightHand)>kDeadzone){
+    ClimberUpUp(&m_climber, &Xbox);
+  } else if (Xbox.GetY(frc::GenericHID::kRightHand)>-kDeadzone) { //////////////////
+    ClimberDownDown(&m_climber, &Xbox);
+  }*/
+
   frc2::JoystickButton(&Xbox, Button::kBumperLeft)
       .WhenHeld(ClimberUpUp(&m_climber, &Xbox));
 
   frc2::JoystickButton(&Xbox, Button::kStickRight)
       .WhenHeld(ClimberDownDown(&m_climber, &Xbox));
-
+  
   frc2::JoystickButton(&Xbox, Button::kY)
-      .WhenHeld(ClimberClimb(&m_climber, &Xbox));
-
- /* if (Xbox.GetY(frc::XboxController::JoystickHand(frc::XboxController::kRightHand))>.2){
-    ClimberUpUp(&m_climber, &Xbox);
-  } else if (Xbox.GetY(frc::XboxController::JoystickHand(frc::XboxController::kRightHand))>-.2) { //////////////////
-    ClimberDownDown(&m_climber, &Xbox);
-  } */
+      .WhenHeld(ClimberClimb(&m_climber, &Xbox)); 
   
   // this logic will need Camden's explanation to implement
   // limelight aiming.  

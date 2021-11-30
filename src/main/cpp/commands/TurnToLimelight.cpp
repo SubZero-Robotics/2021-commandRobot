@@ -34,11 +34,15 @@ void TurnToLimelight::Initialize() {
                             kTurnRateTolerance.to<double>());
   // Set reference to target.  Make sure it fits in -180,180
   m_controller.SetSetpoint(m_drive->SanitizeAngle(m_drive->GetLimelightTargetAngle()).to<double>());
+  bool FirstLimelightPass = true;
 }
 
 void TurnToLimelight::Execute() {
-  // Each tick, adjust setpoint just in case
+  if (FirstLimelightPass) {
+    // Each tick, adjust setpoint just in case
   m_controller.SetSetpoint(m_drive->SanitizeAngle(m_drive->GetLimelightTargetAngle()).to<double>());
+  FirstLimelightPass = false;
+  }
   // And turn to the output
   m_drive->ArcadeDrive(0, m_controller.Calculate(m_drive->GetHeading().to<double>()));
 }

@@ -36,4 +36,5 @@ class TurnToLimelight : public frc2::CommandHelper<frc2::CommandBase, TurnToLime
   private:
     DriveSubsystem* m_drive;
     frc2::PIDController m_controller{0,0,0};  // make a default controller, we'll configure it later
+    bool FirstLimelightPass = true;
 };

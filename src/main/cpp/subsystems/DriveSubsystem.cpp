@@ -51,6 +51,7 @@ void DriveSubsystem::Periodic() {
 
 // Get limelight stuff
   tx = table->GetNumber("tx",0.0); 
+  frc::SmartDashboard::PutNumber("DifferenceLimelightAngle", tx);
   //float ty = table->GetNumber("ty",0.0); 
   //float ta = table-> GetNumber("ta",0.0);
   //float ts = table-> GetNumber("ts", 0.0);
