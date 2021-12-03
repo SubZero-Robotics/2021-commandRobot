@@ -21,30 +21,12 @@ TurnToLimelight::TurnToLimelight(DriveSubsystem* subsystem) : m_drive(subsystem)
 }
 
 void TurnToLimelight::Initialize() {
-  // put limelight in vision mode
+  //Turn on limelight
   m_drive->SelectLimelightPipeline(0);
-  // Initialize PID controller
-  m_controller.SetPID(kTurnP, kTurnI, kTurnD);
-  // Set the controller to be continuous (because it is an angle controller)
-  m_controller.EnableContinuousInput(-180, 180);
-  // Set the controller tolerance - the delta tolerance ensures the robot is
-  // stationary at the setpoint before it is considered as having reached the
-  // reference
-  m_controller.SetTolerance(kTurnTolerance.to<double>(),
-                            kTurnRateTolerance.to<double>());
-  // Set reference to target.  Make sure it fits in -180,180
-  m_controller.SetSetpoint(m_drive->SanitizeAngle(m_drive->GetLimelightTargetAngle()).to<double>());
-  bool FirstLimelightPass = true;
 }
 
 void TurnToLimelight::Execute() {
-  if (FirstLimelightPass) {
-    // Each tick, adjust setpoint just in case
-  m_controller.SetSetpoint(m_drive->SanitizeAngle(m_drive->GetLimelightTargetAngle()).to<double>());
-  FirstLimelightPass = false;
-  }
-  // And turn to the output
-  m_drive->ArcadeDrive(0, m_controller.Calculate(m_drive->GetHeading().to<double>()));
+  TurnToAngle(m_drive->GetLimelightTargetAngle(), m_drive);
 }
 
 void TurnToLimelight::End(bool interrupted) {

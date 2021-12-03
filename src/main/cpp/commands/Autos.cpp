@@ -14,7 +14,9 @@
 
 LeftAuto::LeftAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerSubsystem* indexer) {
   AddCommands(
-      // Drive back the specified time.  Positive power really is backwards
+      DriveStraight(-0.5, drive).WithTimeout(0.5_s),
+      TurnToAngle(150_deg, drive)
+      /*// Drive back the specified time.  Positive power really is backwards
       DriveStraight(0.6, drive).WithTimeout(1_s),
       // aim with limelight: turn on light and turn to target at same time
       TurnToLimelight(drive).WithTimeout(2_s),
@@ -26,7 +28,7 @@ LeftAuto::LeftAuto(DriveSubsystem* drive, ShooterSubsystem * shooter, IndexerSub
       // turn around 180_deg.  Timeout here is in case it doesn't settle in 2s
       TurnToAngle(180_deg, drive).WithTimeout(2_s),
       // drive forward one more second
-      DriveStraight(-0.6, drive).WithTimeout(1_s)
+      DriveStraight(-0.6, drive).WithTimeout(1_s)*/
   );
 }
 

@@ -39,7 +39,7 @@ constexpr double kStabilizationP = 0.12; //tune This to start oscillating.  0.2 
 constexpr double kStabilizationI = 0.36; //Then tune this to stop the osolating .36
 constexpr double kStabilizationD = 0.01; //Finaly tune this to fix final error  .01
 
-constexpr double kTurnP = 0.12; //tune This to start oscillating.  0.2 made 0.667s periods .12
+constexpr double kTurnP = 0.10; //tune This to start oscillating.  0.2 made 0.667s periods .12
 constexpr double kTurnI = 0.36; //Then tune this to stop the osolating .36
 constexpr double kTurnD = 0.01; //Finaly tune this to fix final error  .01
 

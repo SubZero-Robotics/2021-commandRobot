@@ -103,6 +103,12 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   void SelectLimelightPipeline(int pipeline);
 
+/**
+   *
+   * Sets Gyro angle to Zero
+   */
+  void ZeroGyro(void);
+
  /**
    * Returns the ultrasonic sensor's distance
    *

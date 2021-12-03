@@ -95,7 +95,7 @@ double DriveSubsystem::GetTurnRate() {
   if (tv) {
     units::degree_t((gyroAngle+tx) * (kGyroReversed ? -1.0 : 1.0));
   } else {
-    units::degree_t((gyroAngle) * (kGyroReversed ? -1.0 : 1.0));
+    units::degree_t((gyroAngle) * (kGyroReversed ? -1.0 : 1.0)); //improvemnet is to remove this have return error so it doesnt turn
   }
   return target; 
 }
@@ -103,6 +103,10 @@ double DriveSubsystem::GetTurnRate() {
 void DriveSubsystem::SelectLimelightPipeline(int pipeline){
   // 0 is targeting, 1 is camera
   table->PutNumber("pipeline", pipeline);
+}
+
+void DriveSubsystem::ZeroGyro(){
+  ahrs.ZeroYaw();
 }
 
 double DriveSubsystem::GetDistance() {

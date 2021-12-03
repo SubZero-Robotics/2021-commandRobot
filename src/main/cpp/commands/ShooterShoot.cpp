@@ -22,7 +22,7 @@ void ShooterShoot::Execute() {
   // Auto commands pass in NULL for the controller as there's no need to rumble
   if (m_controller != NULL) {
     // get distance from network tables to prevent a DriveSubsystem dependancy
-    double distance = frc::SmartDashboard::GetNumber("RPM",10000.0); // a lot of inches, by default
+    double distance = frc::SmartDashboard::GetNumber("Distance", 10000.0); // a lot of inches, by default
     // if we're too close, warn driver
     if (distance < kRumbleDistance)
       m_controller->SetRumble(frc::GenericHID::RumbleType::kLeftRumble,1.0);
