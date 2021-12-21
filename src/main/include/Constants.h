@@ -25,7 +25,6 @@ constexpr double kDeadzone = 0.2;
 
 // How close in inches to rumble while shooting?
 constexpr double kRumbleDistance = 85.0;
-
 // The indexer motor speed
 constexpr double kIndexerSpeed = 0.5;
 
@@ -40,7 +39,7 @@ constexpr double kStabilizationI = 0.36; //Then tune this to stop the osolating 
 constexpr double kStabilizationD = 0.01; //Finaly tune this to fix final error  .01
 
 constexpr double kTurnP = 0.10; //tune This to start oscillating.  0.2 made 0.667s periods .12
-constexpr double kTurnI = 0.36; //Then tune this to stop the osolating .36
+constexpr double kTurnI = 0.30; //Then tune this to stop the osolating .36
 constexpr double kTurnD = 0.01; //Finaly tune this to fix final error  .01
 
 constexpr auto kTurnTolerance = 5_deg;

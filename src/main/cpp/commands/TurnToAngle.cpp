@@ -16,7 +16,7 @@
 // This uses the lambda in the constructor to do everything.  Ick.
 // trying to write it out more carefully in the limelight version, let's see if that works
 TurnToAngle::TurnToAngle(units::degree_t target, DriveSubsystem* drive)
-    : CommandHelper(frc2::PIDController(kTurnP, kTurnI, kTurnD),
+    : CommandHelper(frc2::PIDController(0.066, 0.1886, 0.00578),
                     // Close loop on heading
                     [drive] { return drive->GetHeading().to<double>(); },
                     // Set reference to target.  Make sure it fits in -180,180
