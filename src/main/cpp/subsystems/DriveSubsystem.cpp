@@ -23,7 +23,7 @@ DriveSubsystem::DriveSubsystem()
   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 
-  // ResetEncoders();
+  ResetEncoders();
 
   // zero gyro
   // Note that this can't happen at power-on when this constructor likely happens
@@ -66,10 +66,10 @@ void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
   m_drive.ArcadeDrive(fwd, rot, true);
 }
 
-//void DriveSubsystem::ResetEncoders() {
- // lEncoder.Reset();
- // rEncoder.Reset();
-//}
+void DriveSubsystem::ResetEncoders() {
+ m_leftEncoder.Reset();
+ m_rightEncoder.Reset();
+}
 
 double DriveSubsystem::GetAverageEncoderDistance() {
   return (m_leftEncoder.GetDistance() + m_rightEncoder.GetDistance()) / 2.0;
