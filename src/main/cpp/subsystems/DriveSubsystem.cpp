@@ -9,7 +9,10 @@
 #include "subsystems/DriveSubsystem.h"
 #include <frc/Encoder.h>
 
-DriveSubsystem::DriveSubsystem() {
+DriveSubsystem::DriveSubsystem()
+    : m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
+      m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]}
+        {
   // Implementation of subsystem constructor goes here.
 
   //Drive train motor grouping start
@@ -64,8 +67,8 @@ void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
 }
 
 void DriveSubsystem::ResetEncoders() {
-  m_leftEncoder.Reset();
-  m_rightEncoder.Reset();
+ m_leftEncoder.Reset();
+ m_rightEncoder.Reset();
 }
 
 double DriveSubsystem::GetAverageEncoderDistance() {
