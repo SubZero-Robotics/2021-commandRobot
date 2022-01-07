@@ -9,7 +9,10 @@
 #include "subsystems/DriveSubsystem.h"
 #include <frc/Encoder.h>
 
-DriveSubsystem::DriveSubsystem() {
+DriveSubsystem::DriveSubsystem()
+    : m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
+      m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]}
+        {
   // Implementation of subsystem constructor goes here.
 
   //Drive train motor grouping start
@@ -20,7 +23,7 @@ DriveSubsystem::DriveSubsystem() {
   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 
-  ResetEncoders();
+  // ResetEncoders();
 
   // zero gyro
   // Note that this can't happen at power-on when this constructor likely happens
