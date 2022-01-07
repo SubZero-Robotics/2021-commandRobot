@@ -7,6 +7,10 @@
 
 #pragma once
 
+<<<<<<< HEAD
+=======
+// #include <units/units.h> 
+>>>>>>> main
 #include <units/acceleration.h>
 #include <units/angle.h>
 #include <units/angular_acceleration.h>
@@ -40,6 +44,9 @@ constexpr double kIndexerSpeed = 0.5;
 constexpr double kIntakeSpeed = 0.5;
 
 //DriveSubsystem constants
+
+constexpr int kLeftEncoderPorts[]{3, 4};
+constexpr int kRightEncoderPorts[]{1, 2};
 
 constexpr bool kLeftEncoderReversed = false;
 constexpr bool kRightEncoderReversed = false;
