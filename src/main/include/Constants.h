@@ -8,6 +8,14 @@
 #pragma once
 
 #include <units/units.h> 
+#include <units/acceleration.h>
+#include <units/angle.h>
+#include <units/angular_acceleration.h>
+#include <units/angular_velocity.h>
+#include <units/length.h>
+#include <units/time.h>
+#include <units/velocity.h>
+#include <units/voltage.h>
 #include <wpi/math>
 
 /**
@@ -25,11 +33,26 @@ constexpr double kDeadzone = 0.2;
 
 // How close in inches to rumble while shooting?
 constexpr double kRumbleDistance = 85.0;
+
 // The indexer motor speed
 constexpr double kIndexerSpeed = 0.5;
 
 // The indexer motor speed
 constexpr double kIntakeSpeed = 0.5;
+
+//DriveSubsystem constants
+
+constexpr bool kLeftEncoderReversed = false;
+constexpr bool kRightEncoderReversed = false;
+
+constexpr auto kTrackwidth = 0.69_m; //I have not measured this, it is copied
+
+constexpr int kEncoderCPR = 1024; //Max power value???
+constexpr double kWheelDiameterInches = 6;
+constexpr double kEncoderDistancePerPulse =
+    // Assumes the encoders are directly mounted on the wheel shafts
+    (kWheelDiameterInches * wpi::math::pi) /
+    static_cast<double>(kEncoderCPR);
 
 // Turning constants
 constexpr bool kGyroReversed = false;

@@ -16,10 +16,11 @@ DriveSubsystem::DriveSubsystem() {
   RightFollow.Follow(RightLead);
   LeftFollow.Follow(LeftLead);
 
- // Set the distance per pulse for the encoders
- // if we had them
-  //m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
-  //m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
+  // Set the distance per pulse for the encoders
+  m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
+  m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
+
+  ResetEncoders();
 
   // zero gyro
   // Note that this can't happen at power-on when this constructor likely happens
@@ -63,17 +64,17 @@ void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
 }
 
 //void DriveSubsystem::ResetEncoders() {
-//  lEncoder.Reset();
-//  rEncoder.Reset();
+ // lEncoder.Reset();
+ // rEncoder.Reset();
 //}
 
-//double DriveSubsystem::GetAverageEncoderDistance() {
-//  return (m_leftEncoder.GetDistance() + m_rightEncoder.GetDistance()) / 2.0;
-//}
+double DriveSubsystem::GetAverageEncoderDistance() {
+  return (m_leftEncoder.GetDistance() + m_rightEncoder.GetDistance()) / 2.0;
+}
 
-//frc::Encoder& DriveSubsystem::GetLeftEncoder() { return m_leftEncoder; }
+frc::Encoder& DriveSubsystem::GetLeftEncoder() { return m_leftEncoder; }
 
-//frc::Encoder& DriveSubsystem::GetRightEncoder() { return m_rightEncoder; }
+frc::Encoder& DriveSubsystem::GetRightEncoder() { return m_rightEncoder; }
 
 void DriveSubsystem::SetMaxOutput(double maxOutput) {
   m_drive.SetMaxOutput(maxOutput);

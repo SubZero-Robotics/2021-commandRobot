@@ -30,9 +30,11 @@
 *.exe
 *.out
 *.app
+*.bak
 
 # gradle 
 .gradle/
 
 # the build directory
 build/
+.vscode/
