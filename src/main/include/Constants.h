@@ -7,7 +7,6 @@
 
 #pragma once
 
-#include <units/units.h> 
 #include <units/acceleration.h>
 #include <units/angle.h>
 #include <units/angular_acceleration.h>

@@ -12,6 +12,9 @@
 #include <frc/Encoder.h>
 #include <frc/AnalogInput.h>
 #include <AHRS.h>
+#include <frc/geometry/Pose2d.h>
+#include <frc/kinematics/DifferentialDriveOdometry.h>
+#include <units/voltage.h>
 #include <networktables/NetworkTable.h>
 #include <networktables/NetworkTableInstance.h>
 #include <networktables/NetworkTableEntry.h>
@@ -34,7 +37,7 @@ class DriveSubsystem : public frc2::SubsystemBase {
 
   // Subsystem methods go here.
 
-/**
+  /**
    * Drives the robot using arcade controls.
    *
    * @param fwd the commanded forward movement
@@ -42,19 +45,27 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   void ArcadeDrive(double fwd, double rot);
 
-/**
+  /**
+   * Controls each side of the drive directly with a voltage.
+   *
+   * @param left the commanded left output
+   * @param right the commanded right output
+   */
+  void TankDriveVolts(units::volt_t left, units::volt_t right);
+
+  /**
    * Resets the drive encoders to currently read a position of 0.
    */
   void ResetEncoders();
 
-/**
+  /**
    * Gets the average distance of the TWO encoders.
    *
    * @return the average of the TWO encoder readings (left and right)
    */
   double GetAverageEncoderDistance();
 
-/**
+  /**
    * Gets the left drive encoder.
    *
    * @return the left drive encoder
@@ -68,7 +79,7 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   frc::Encoder& GetRightEncoder();
 
-/**
+  /**
    * Sets the max output of the drive.  Useful for scaling the drive to drive
    * more slowly.
    *
@@ -76,7 +87,7 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   void SetMaxOutput(double maxOutput);
 
-/**
+  /**
    * Returns the heading of the robot.
    *
    * @return the robot's heading in degrees, from 180 to 180
@@ -98,12 +109,33 @@ class DriveSubsystem : public frc2::SubsystemBase {
   units::degree_t GetLimelightTargetAngle();
 
   /**
+   * Returns the currently-estimated pose of the robot.
+   *
+   * @return The pose.
+   */
+  frc::Pose2d GetPose();
+
+  /**
+   * Returns the current wheel speeds of the robot.
+   *
+   * @return The current wheel speeds.
+   */
+  frc::DifferentialDriveWheelSpeeds GetWheelSpeeds();
+
+  /**
+   * Resets the odometry to the specified pose.
+   *
+   * @param pose The pose to which to set the odometry.
+   */
+  void ResetOdometry(frc::Pose2d pose);
+
+  /**
    *
    * Chooses the active limelight pipeline
    */
   void SelectLimelightPipeline(int pipeline);
 
-/**
+  /**
    *
    * Sets Gyro angle to Zero
    */
@@ -116,7 +148,6 @@ class DriveSubsystem : public frc2::SubsystemBase {
    */
   double GetDistance();
 
-  
  /**
    * make sure target angle is in the right range
    *
